@@ -33,9 +33,6 @@ export default {
       });
       return result;
     }
-  },
-  mounted() {
-    console.log(this.routesInfo.options.routes);
   }
 };
 </script>
@@ -57,8 +54,8 @@ export default {
     padding-top: 6px;
 
     .img {
-      height: 20px;
-      width: 20px;
+      height: 22px;
+      width: 22px;
       img {
         height: 100%;
         width: 100%;

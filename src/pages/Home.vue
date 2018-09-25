@@ -2,34 +2,28 @@
   <div class="home">
     <div class="home-main">
       <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
-      <HomeSwiper />
+      <HomeSearch />
+      <HomeStaticNav />
     </div>
   </div>
 </template>
 <script>
-import HomeSwiper from "@/components/HomeSwiper";
 import { mapMutations } from "vuex";
+import { HomeSwiper, HomeSearch, HomeStaticNav } from "@/components";
 export default {
   name: "home",
   components: {
-    HomeSwiper
+    HomeSwiper,
+    HomeSearch,
+    HomeStaticNav
   },
   methods: {
     ...mapMutations(["changeIsHome"])
   },
   mounted() {
-    console.log("start");
     this.changeIsHome(true);
   },
   beforeDestroy() {
-    console.log("end");
     this.changeIsHome(false);
   }
 };

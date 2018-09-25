@@ -25,6 +25,7 @@ export default {
 <style lang="less" scoped>
 .swiperbox {
   height: 175px;
+  margin-bottom: 10px;
   .pic {
     height: 175px;
   }

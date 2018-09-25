@@ -1,0 +1,6 @@
+export { default as HomeSearch } from './HomeSearch'
+export { default as HomeFixHeader } from './HomeFixHeader'
+export { default as HomeSwiper } from './HomeSwiper'
+export { default as HomeStaticNav } from './HomeStaticNav'
+export { default as Tabbar } from './Tabbar'
+export { default as Icon } from './Icon/index'

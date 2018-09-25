@@ -9,8 +9,7 @@
 </template>
 
 <script>
-import Tabbar from "@/components/Tabbar";
-import HomeFixHeader from "@/components/HomeFixHeader";
+import { Tabbar, HomeFixHeader } from "@/components";
 import { iconCart } from "@/images/base";
 export default {
   name: "App",
@@ -68,6 +67,9 @@ option {
 body,
 html {
   height: 100%;
+}
+input {
+  border: none;
 }
 .main {
   display: flex;
