@@ -2,16 +2,21 @@ const Home = () => import('@/pages/Home.vue')
 const Mine = () => import('@/pages/Mine.vue')
 const Cart = () => import('@/pages/Cart.vue')
 const Category = () => import('@/pages/Category.vue')
+const List = () => import('@/pages/List.vue')
 
 export default [{
   path: '/',
-  redirect: '/home'
+  redirect: '/home',
+  meta: {
+    isNav: false
+  }
 }, {
   path: '/home',
   name: 'home',
   text: '主页',
   meta: {
-    icon: '/images/base/cart.png'
+    isNav: true,
+    icon: '../../static/images/base/home.png'
   },
   components: {
     default: Home
@@ -21,7 +26,8 @@ export default [{
   name: 'category',
   text: '分类',
   meta: {
-    icon: '@/images/base/cart.png'
+    isNav: true,
+    icon: '../../static/images/base/category.png'
   },
   components: {
     default: Category
@@ -31,7 +37,8 @@ export default [{
   name: 'cart',
   text: '购物车',
   meta: {
-    icon: '@/images/base/cart.png'
+    isNav: true,
+    icon: '../../static/images/base/cart.png'
   },
   components: {
     default: Cart
@@ -41,9 +48,19 @@ export default [{
   name: 'mine',
   text: '会员中心',
   meta: {
-    icon: '@/images/base/cart.png'
+    isNav: true,
+    icon: '../../static/images/base/mine.png'
   },
   components: {
     default: Mine
+  }
+}, {
+  path: '/list',
+  name: 'list',
+  components: {
+    default: List
+  },
+  meta: {
+    isNav: false
   }
 }]

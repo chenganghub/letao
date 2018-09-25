@@ -4,46 +4,66 @@
     class="tabbar-item"
     v-for="item in links"
     :key="item.path"
-    :to="item.path">
+    :to="item.path"
+    >
+    <div class="img">
+      <img :src="item.meta.icon" alt="">
+    </div>
     {{item.text}}
     </router-link>
   </div>
 </template>
 
 <script>
-import routesInfo from '@/routes'
+import routesInfo from "@/routes";
 export default {
-  name:'tabbar',
-  data(){
+  name: "tabbar",
+  data() {
     return {
       routesInfo,
-      selected:'首页',
-    }
+      selected: "首页"
+    };
   },
-  computed:{
-    links(){
-      const result = this.routesInfo.options.routes.filter(item=>item.meta);
+  computed: {
+    links() {
+      const result = this.routesInfo.options.routes.filter(item => {
+        if (item.meta.isNav == true) {
+          return item;
+        }
+      });
       return result;
     }
   },
-  mounted(){
-    console.log(this.routesInfo.options.routes[1].meta.icon)
+  mounted() {
+    console.log(this.routesInfo.options.routes);
   }
-}
+};
 </script>
 
 <style scoped lang='less'>
-.tabbar{
-  height:47px;
-  background-color:#4c4c4c;
-  line-height:47px;
-  display:flex;
-  &-item{
-    flex:1;
-    text-align:center;
-    color:white;
-    text-decoration:none;
-    font-size:12px;
+.tabbar {
+  height: 47px;
+  background-color: #4c4c4c;
+  display: flex;
+  &-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding-top: 6px;
+
+    .img {
+      height: 20px;
+      width: 20px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
 </style>
