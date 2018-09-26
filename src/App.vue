@@ -1,7 +1,7 @@
 <template>
   <div class='main'>
     <HomeFixHeader v-if="isHome" />
-    <div class='main-info'>
+    <div class='main-info' ref="mainScroll">
       <router-view></router-view>
     </div>
     <Tabbar />
@@ -10,6 +10,7 @@
 
 <script>
 import { Tabbar, HomeFixHeader } from "@/components";
+import { mapMutations } from "vuex";
 export default {
   name: "App",
   components: {
@@ -22,8 +23,21 @@ export default {
       isHome: false
     };
   },
+  methods: {
+    ...mapMutations(["changeReturnTop"])
+  },
   updated() {
     this.isHome = this.$store.state.isHome;
+  },
+  mounted() {
+    this.el = this.$refs.mainScroll;
+    this.el.addEventListener("scroll", () => {
+      if (this.el.scrollTop >= 500) {
+        this.changeReturnTop(true);
+      }else{
+        this.changeReturnTop();
+      }
+    },false);
   }
 };
 </script>

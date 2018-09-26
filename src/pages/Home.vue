@@ -5,6 +5,9 @@
       <HomeSearch />
       <HomeStaticNav />
       <HomeList />
+      <HomeLastItem />
+      <CustomerService />
+      <HomeToTop />
     </div>
   </div>
 </template>
@@ -15,6 +18,9 @@ import {
   HomeSearch,
   HomeStaticNav,
   HomeList,
+  HomeLastItem,
+  CustomerService,
+  HomeToTop
 } from "@/components";
 export default {
   name: "home",
@@ -22,7 +28,10 @@ export default {
     HomeSwiper,
     HomeSearch,
     HomeStaticNav,
-    HomeList
+    HomeList,
+    HomeLastItem,
+    CustomerService,
+    HomeToTop
   },
   methods: {
     ...mapMutations(["changeIsHome"])
