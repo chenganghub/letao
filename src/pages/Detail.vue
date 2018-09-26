@@ -1,14 +1,15 @@
 <template>
   <div>
-    列表
+    详情
   </div>
 </template>
 
 <script>
 export default {
-  name: "列表"
-};
+  name:'详情'
+}
 </script>
 
 <style>
+
 </style>

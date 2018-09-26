@@ -4,18 +4,25 @@
       <HomeSwiper />
       <HomeSearch />
       <HomeStaticNav />
+      <HomeList />
     </div>
   </div>
 </template>
 <script>
 import { mapMutations } from "vuex";
-import { HomeSwiper, HomeSearch, HomeStaticNav } from "@/components";
+import {
+  HomeSwiper,
+  HomeSearch,
+  HomeStaticNav,
+  HomeList,
+} from "@/components";
 export default {
   name: "home",
   components: {
     HomeSwiper,
     HomeSearch,
-    HomeStaticNav
+    HomeStaticNav,
+    HomeList
   },
   methods: {
     ...mapMutations(["changeIsHome"])

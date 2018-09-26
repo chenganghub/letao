@@ -10,7 +10,6 @@
 
 <script>
 import { Tabbar, HomeFixHeader } from "@/components";
-import { iconCart } from "@/images/base";
 export default {
   name: "App",
   components: {
@@ -20,7 +19,6 @@ export default {
   data() {
     return {
       name: "HDM",
-      iconCart,
       isHome: false
     };
   },

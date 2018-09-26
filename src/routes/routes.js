@@ -3,6 +3,7 @@ const Mine = () => import('@/pages/Mine.vue')
 const Cart = () => import('@/pages/Cart.vue')
 const Category = () => import('@/pages/Category.vue')
 const List = () => import('@/pages/List.vue')
+const Detail = () => import('@/pages/Detail.vue')
 
 export default [{
   path: '/',
@@ -59,6 +60,15 @@ export default [{
   name: 'list',
   components: {
     default: List
+  },
+  meta: {
+    isNav: false
+  }
+}, {
+  path: '/detail/:id',
+  name: 'detail',
+  components: {
+    default: Detail
   },
   meta: {
     isNav: false

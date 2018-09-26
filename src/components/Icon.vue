@@ -3,13 +3,13 @@
 </template>
 
 <script>
-import "../css/icon.css";
+import "./css/icon.css";
 export default {
-  name: "Icon",
+  name: "icon",
   props: ["icon"]
 };
 </script>
 
 <style>
-@import "../css/icon.css";
+@import "./css/icon.css";
 </style>

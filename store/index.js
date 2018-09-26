@@ -8,7 +8,7 @@ const store = new Vuex.Store({
     isHome: false
   },
   mutations: {
-    changeIsHome(state, bool) {
+    changeIsHome (state, bool) {
       state.isHome = bool
     }
   }
