@@ -1,5 +1,6 @@
 <template>
   <div class='main'>
+    <HomeFixHeader v-if="isHome" />
     <div class='main-info'>
       <router-view></router-view>
     </div>
@@ -8,36 +9,73 @@
 </template>
 
 <script>
-import Tabbar from '@/components/Tabbar'
-import {iconCart} from '@/images/base'
+import { Tabbar, HomeFixHeader } from "@/components";
 export default {
   name: "App",
-  components:{
-    Tabbar
+  components: {
+    Tabbar,
+    HomeFixHeader
   },
   data() {
     return {
       name: "HDM",
-      iconCart
+      isHome: false
     };
   },
+  updated() {
+    this.isHome = this.$store.state.isHome;
+  }
 };
 </script>
 
 <style lang="less">
-*{
+html,
+body,
+header,
+main,
+nav,
+footer,
+div,
+ul,
+li,
+a,
+form,
+fieldset,
+legend,
+img,
+input,
+p,
+i,
+span,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+section,
+select,
+option {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-body,html{
+body,
+html {
   height: 100%;
 }
-.main{
+input {
+  border: none;
+}
+.main {
   display: flex;
   flex-direction: column;
-  height:100%;
-  &-info{
-    flex:1;
+  height: 100%;
+  &-info {
+    flex: 1;
+    overflow-y: scroll;
   }
 }
 </style>
