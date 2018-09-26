@@ -6,7 +6,7 @@
       <HomeStaticNav />
       <HomeList />
       <HomeLastItem />
-      <HomeService />
+      <CustomerService />
       <HomeToTop />
     </div>
   </div>
@@ -19,7 +19,7 @@ import {
   HomeStaticNav,
   HomeList,
   HomeLastItem,
-  HomeService,
+  CustomerService,
   HomeToTop
 } from "@/components";
 export default {
@@ -30,7 +30,7 @@ export default {
     HomeStaticNav,
     HomeList,
     HomeLastItem,
-    HomeService,
+    CustomerService,
     HomeToTop
   },
   methods: {

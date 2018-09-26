@@ -37,7 +37,7 @@ export default {
       }else{
         this.changeReturnTop();
       }
-    });
+    },false);
   }
 };
 </script>
