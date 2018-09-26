@@ -9,4 +9,11 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.fullPath === '/category/:type') {
+    return next('/category/yundongxie')
+  }
+  return next()
+})
+
 export default router
