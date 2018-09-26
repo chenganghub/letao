@@ -23,7 +23,7 @@ export default [{
     default: Home
   }
 }, {
-  path: '/category',
+  path: '/category/:type',
   name: 'category',
   text: '分类',
   meta: {

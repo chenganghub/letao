@@ -1,18 +1,32 @@
 <template>
-  <div>
-    分类
+  <div class="outer-box">
+    <CateSearch />
+    <CateBox />
     <CustomerService />
   </div>
 </template>
 
 <script>
-import { CustomerService } from '@/components'
+import { CustomerService, CateSearch, CateBox } from "@/components";
 export default {
-  name:'category',
-  components:{
-    CustomerService
+  name: "category",
+  components: {
+    CustomerService,
+    CateSearch,
+    CateBox
   }
-}
+};
 </script>
 
-<style></style>
+<style lang="less" scoped>
+@import '../lib/base.less';
+.outer-box{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  background-color: @gray;
+  .box{
+    flex: 1;
+  }
+}
+</style>
