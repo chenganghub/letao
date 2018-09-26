@@ -1,3 +1,4 @@
 export default {
-  isHome: false
+  isHome: false,
+  returnTopShow: false
 }
