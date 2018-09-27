@@ -1,9 +1,10 @@
 <template>
   <div class="header">
-    <Icon
-    icon='flow'
-    @click="back"
-    />
+    <span
+    @click='back'
+    >
+      <Icon icon='flow'/>
+    </span>
   {{text}}
   </div>
 </template>
@@ -18,7 +19,7 @@ export default {
   },
   methods: {
     back() {
-      this.$route.history.go(-1)
+      this.$router.history.go(-1)
     }
   }
 };

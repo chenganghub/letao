@@ -1,5 +1,10 @@
 export default {
   isHome: false,
   returnTopShow: false,
-  cateBoxList: {}
+  cateBoxList: {},
+  isLogin: false,
+  userInfo: [{
+    username: 'ymy',
+    password: 'ymy'
+  }]
 }
