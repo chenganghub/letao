@@ -2,7 +2,7 @@
   <ul class="homelist">
     <li
     v-for="item in list"
-    :key="item.itemMore"
+    :key="item.itemId"
     >
     <div class="homelist-title">
       <img
@@ -19,7 +19,7 @@
     <div class="homelist-tags">
       <img 
       v-for="tagitem in item.itemTag"
-      :key="tagitem.url"
+      :key="tagitem.id"
       :src="tagitem.url"
       @click="goList"
       alt="">
@@ -27,7 +27,7 @@
     <div class="homelist-items">
       <img 
       v-for="items in item.itemImgs"
-      :key="items.url"
+      :key="items.id"
       :src="items.url"
       @click="goDetail(items.id)"
       alt="">
