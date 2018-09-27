@@ -2,7 +2,7 @@
   <ul class="homelist">
     <li
     v-for="item in list"
-    :key="item.itemMore"
+    :key="item.itemId"
     >
     <div class="homelist-title">
       <img
@@ -17,21 +17,21 @@
       alt="">
     </div>
     <div class="homelist-tags">
-      <img 
+      <img
       v-for="tagitem in item.itemTag"
-      :key="tagitem.url"
+      :key="tagitem.id"
       :src="tagitem.url"
       @click="goList"
       alt="">
     </div>
     <div class="homelist-items">
-      <img 
+      <img
       v-for="items in item.itemImgs"
-      :key="items.url"
+      :key="items.id"
       :src="items.url"
       @click="goDetail(items.id)"
       alt="">
-      <img 
+      <img
       :src="item.itemMore"
       @click="goList"
       alt="">
@@ -54,12 +54,12 @@ export default {
       this.list = resp;
     });
   },
-  methods:{
-    goDetail(id){
-      this.$router.history.push(`/detail/${id}`)
+  methods: {
+    goDetail(id) {
+      this.$router.history.push(`/detail/${id}`);
     },
-    goList(){
-      this.$router.history.push('/list')
+    goList() {
+      this.$router.history.push("/list");
     }
   }
 };
@@ -68,22 +68,23 @@ export default {
 <style lang="less" scoped>
 .homelist {
   list-style: none;
-  &-title,&-nav{
+  &-title,
+  &-nav {
     width: 100%;
-    img{
+    img {
       width: 100%;
     }
   }
-  &-tags{
+  &-tags {
     height: 30px;
-    img{
+    img {
       width: 25%;
       height: inherit;
     }
   }
-  &-items{
+  &-items {
     width: 100%;
-    img{
+    img {
       height: 230px;
       width: 50%;
       float: left;

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "列表"
+  name: '列表'
 };
 </script>
 

@@ -14,14 +14,14 @@
 
 <script>
 export default {
-  name:'HomeLastItem'
+  name: 'HomeLastItem'
 }
 </script>
 
 <style lang="less" scoped>
 .lastitem{
   width: 100%;
-  padding-bottom:15px; 
+  padding-bottom:15px;
   &-title{
     img{
       width: 100%;

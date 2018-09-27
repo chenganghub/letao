@@ -13,9 +13,9 @@ export default {
   data() {
     return {
       pics: [
-        "../../static/images/home/banner (1).jpg",
-        "../../static/images/home/banner (2).jpg",
-        "../../static/images/home/banner (3).jpg"
+        "/../static/images/home/banner (1).jpg",
+        "/../static/images/home/banner (2).jpg",
+        "/../static/images/home/banner (3).jpg"
       ]
     };
   }

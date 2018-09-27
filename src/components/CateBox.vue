@@ -8,49 +8,66 @@
       @click="checkthis(item.type)"
       >{{item.text}}</li>
     </ul>
-    <div class="right-content"></div>
+    <router-view></router-view>
   </div>
-</template>
-
+</template>'
 <script>
+import { mapActions } from 'vuex'
+
 export default {
-  name: "CateBox",
-  data() {
+  name: 'CateBox',
+  data (){
     return {
-      navs: [{
-          text: "运动鞋",
-          type: "yundongxie"
-        },{
-          text: "女鞋",
-          type: "nvxie"
-        },{
-          text: "男鞋",
-          type: "nanxie"
-        },{
-          text: "童鞋",
-          type: "tongxie"
-        },{
-          text: "箱包",
-          type: "xiangbao"
+      list: {
+        titleImg: null
+      },
+      navs: [
+        {
+          text: '运动鞋',
+          type: 'yundongxie'
         },
+        {
+          text: '女鞋',
+          type: 'nvxie'
+        },
+        {
+          text: '男鞋',
+          type: 'nanxie'
+        },
+        {
+          text: '童鞋',
+          type: 'tongxie'
+        },
+        {
+          text: '箱包',
+          type: 'xiangbao'
+        }
       ],
-      ischecked: "yundongxie"
-    };
+      ischecked: 'yundongxie'
+    }
   },
   methods: {
+    ...mapActions(['changeCateList']),
     checkthis(value) {
       this.ischecked = value;
-      this.$router.history.push(`/category/${value}`)
+      this.$router.history.push(`/category/${value}`);
     }
+  },
+  created() {
+    this.changeCateList();
+  },
+  updated() {
+    this.changeCateList();
   }
 };
 </script>
 
 <style lang="less" scoped>
-@import "../lib/base.less";
+@import '../lib/base.less';
 .box {
   display: flex;
   height: 100%;
+  overflow: hidden;
   .left-nav {
     width: 80px;
     height: 100%;
@@ -67,11 +84,6 @@ export default {
       background-color: @gray;
       color: @red;
     }
-  }
-  .right-content {
-    height: 100%;
-    flex: 1;
-    overflow-y: scroll;
   }
 }
 </style>

@@ -6,9 +6,9 @@
 
 <script>
 export default {
-  name:'cart'
+  name: 'cart'
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 </style>
