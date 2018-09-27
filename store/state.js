@@ -1,4 +1,5 @@
 export default {
   isHome: false,
-  returnTopShow: false
+  returnTopShow: false,
+  cateBoxList: {}
 }

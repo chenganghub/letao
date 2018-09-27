@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Indicator, MessageBox } from 'mint-ui'
 
 const ajax = axios.create({
-  baseURL: 'http://rap2api.taobao.org/app/mock/86102/api/v1'
+  baseURL: 'http://rap2api.taobao.org/app/mock'
 })
 
 ajax.interceptors.request.use(config => {
@@ -24,5 +24,9 @@ ajax.interceptors.response.use(resp => {
 })
 
 export const getHomeList = () => {
-  return ajax.get('/home/list')
+  return ajax.get('/86102/api/v1/home/list')
+}
+
+export const getCateList = () => {
+  return ajax.get('/86102/api/v1/category/list')
 }

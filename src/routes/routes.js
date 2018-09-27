@@ -4,6 +4,7 @@ const Cart = () => import('@/pages/Cart.vue')
 const Category = () => import('@/pages/Category.vue')
 const List = () => import('@/pages/List.vue')
 const Detail = () => import('@/pages/Detail.vue')
+const CateBoxList = () => import('../components/CateBoxList.vue')
 
 export default [{
   path: '/',
@@ -17,29 +18,48 @@ export default [{
   text: '主页',
   meta: {
     isNav: true,
-    icon: '../../static/images/base/home.png'
+    icon: '/../static/images/base/home.png'
   },
   components: {
     default: Home
   }
 }, {
-  path: '/category/:type',
+  path: '/category',
   name: 'category',
   text: '分类',
   meta: {
     isNav: true,
-    icon: '../../static/images/base/category.png'
+    icon: '/../static/images/base/category.png'
   },
-  components: {
-    default: Category
-  }
+  component: Category,
+  children: [{
+    path: 'nvxie',
+    name: 'nvxie',
+    component: CateBoxList
+  }, {
+    path: 'nanxie',
+    name: 'nanxie',
+    component: CateBoxList
+  }, {
+    path: 'tongxie',
+    name: 'tongxie',
+    component: CateBoxList
+  }, {
+    path: 'yundongxie',
+    name: 'yundongxie',
+    component: CateBoxList
+  }, {
+    path: 'xiangbao',
+    name: 'xiangbao',
+    component: CateBoxList
+  }]
 }, {
   path: '/cart',
   name: 'cart',
   text: '购物车',
   meta: {
     isNav: true,
-    icon: '../../static/images/base/cart.png'
+    icon: '/../static/images/base/cart.png'
   },
   components: {
     default: Cart
@@ -50,7 +70,7 @@ export default [{
   text: '会员中心',
   meta: {
     isNav: true,
-    icon: '../../static/images/base/mine.png'
+    icon: '/../static/images/base/mine.png'
   },
   components: {
     default: Mine
@@ -65,7 +85,7 @@ export default [{
     isNav: false
   }
 }, {
-  path: '/detail/:id',
+  path: '/detail',
   name: 'detail',
   components: {
     default: Detail

@@ -10,7 +10,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.fullPath === '/category/:type') {
+  if (to.fullPath === '/category') {
     return next('/category/yundongxie')
   }
   return next()
