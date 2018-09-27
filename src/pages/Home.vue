@@ -23,7 +23,7 @@ import {
   HomeToTop
 } from "@/components";
 export default {
-  name: "home",
+  name: 'home',
   components: {
     HomeSwiper,
     HomeSearch,

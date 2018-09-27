@@ -7,7 +7,7 @@
     <div class="list-box">
       <div
       v-for="item in cateBoxList.items"
-      :key="item.url"
+      :key="item.id"
       class="list-item">
         <img :src="item.url" alt="">
       </div>

@@ -1,14 +1,13 @@
 <template>
-  <div>
-    Mine
-  </div>
+  <div>login</div>
 </template>
 
 <script>
 export default {
-  name: 'detail'
-};
+  name: 'Login'
+}
 </script>
 
 <style>
+
 </style>

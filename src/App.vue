@@ -4,15 +4,15 @@
     <div class='main-info' ref="mainScroll">
       <router-view></router-view>
     </div>
-    <Tabbar />
+    <router-view name='Tabbar'></router-view>
   </div>
 </template>
 
 <script>
-import { Tabbar, HomeFixHeader } from "@/components";
-import { mapMutations } from "vuex";
+import { Tabbar, HomeFixHeader } from '@/components'
+import { mapMutations } from 'vuex'
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Tabbar,
     HomeFixHeader

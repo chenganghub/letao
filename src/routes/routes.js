@@ -4,7 +4,10 @@ const Cart = () => import('@/pages/Cart.vue')
 const Category = () => import('@/pages/Category.vue')
 const List = () => import('@/pages/List.vue')
 const Detail = () => import('@/pages/Detail.vue')
+const Login = () => import('@/pages/Login.vue')
+const Register = () => import('@/pages/Register.vue')
 const CateBoxList = () => import('../components/CateBoxList.vue')
+const Tabbar = () => import('../components/Tabbar.vue')
 
 export default [{
   path: '/',
@@ -21,7 +24,8 @@ export default [{
     icon: '/../static/images/base/home.png'
   },
   components: {
-    default: Home
+    default: Home,
+    Tabbar
   }
 }, {
   path: '/category',
@@ -31,7 +35,10 @@ export default [{
     isNav: true,
     icon: '/../static/images/base/category.png'
   },
-  component: Category,
+  components: {
+    default: Category,
+    Tabbar
+  },
   children: [{
     path: 'nvxie',
     name: 'nvxie',
@@ -62,7 +69,8 @@ export default [{
     icon: '/../static/images/base/cart.png'
   },
   components: {
-    default: Cart
+    default: Cart,
+    Tabbar
   }
 }, {
   path: '/mine',
@@ -73,7 +81,8 @@ export default [{
     icon: '/../static/images/base/mine.png'
   },
   components: {
-    default: Mine
+    default: Mine,
+    Tabbar
   }
 }, {
   path: '/list',
@@ -89,6 +98,24 @@ export default [{
   name: 'detail',
   components: {
     default: Detail
+  },
+  meta: {
+    isNav: false
+  }
+}, {
+  path: '/login',
+  name: 'login',
+  components: {
+    default: Login
+  },
+  meta: {
+    isNav: false
+  }
+}, {
+  path: '/register',
+  name: 'register',
+  components: {
+    default: Register
   },
   meta: {
     isNav: false

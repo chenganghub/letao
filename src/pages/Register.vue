@@ -1,14 +1,13 @@
 <template>
-  <div>
-    Mine
-  </div>
+  <div>register</div>
 </template>
 
 <script>
 export default {
-  name: 'detail'
-};
+  name: 'Register'
+}
 </script>
 
 <style>
+
 </style>

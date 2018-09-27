@@ -10,42 +10,41 @@
     </ul>
     <router-view></router-view>
   </div>
-</template>
-
+</template>'
 <script>
 import { mapActions } from 'vuex'
 
 export default {
-  name: "CateBox",
-  data() {
+  name: 'CateBox',
+  data (){
     return {
       list: {
         titleImg: null
       },
       navs: [
         {
-          text: "运动鞋",
-          type: "yundongxie"
+          text: '运动鞋',
+          type: 'yundongxie'
         },
         {
-          text: "女鞋",
-          type: "nvxie"
+          text: '女鞋',
+          type: 'nvxie'
         },
         {
-          text: "男鞋",
-          type: "nanxie"
+          text: '男鞋',
+          type: 'nanxie'
         },
         {
-          text: "童鞋",
-          type: "tongxie"
+          text: '童鞋',
+          type: 'tongxie'
         },
         {
-          text: "箱包",
-          type: "xiangbao"
+          text: '箱包',
+          type: 'xiangbao'
         }
       ],
-      ischecked: "yundongxie"
-    };
+      ischecked: 'yundongxie'
+    }
   },
   methods: {
     ...mapActions(['changeCateList']),
@@ -54,17 +53,17 @@ export default {
       this.$router.history.push(`/category/${value}`);
     }
   },
-  created(){
+  created() {
     this.changeCateList();
   },
-  updated(){
+  updated() {
     this.changeCateList();
   }
 };
 </script>
 
 <style lang="less" scoped>
-@import "../lib/base.less";
+@import '../lib/base.less';
 .box {
   display: flex;
   height: 100%;

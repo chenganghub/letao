@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name:'详情'
+  name: '详情'
 }
 </script>
 
