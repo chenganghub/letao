@@ -21,6 +21,7 @@ export default [{
   text: '主页',
   meta: {
     isNav: true,
+    needLogin: false,
     icon: '/../static/images/base/home.png'
   },
   components: {
@@ -33,6 +34,7 @@ export default [{
   text: '分类',
   meta: {
     isNav: true,
+    needLogin: false,
     icon: '/../static/images/base/category.png'
   },
   components: {
@@ -66,6 +68,7 @@ export default [{
   text: '购物车',
   meta: {
     isNav: true,
+    needLogin: true,
     icon: '/../static/images/base/cart.png'
   },
   components: {
@@ -78,6 +81,7 @@ export default [{
   text: '会员中心',
   meta: {
     isNav: true,
+    needLogin: true,
     icon: '/../static/images/base/mine.png'
   },
   components: {
@@ -91,7 +95,8 @@ export default [{
     default: List
   },
   meta: {
-    isNav: false
+    isNav: false,
+    needLogin: false
   }
 }, {
   path: '/detail',
@@ -100,7 +105,8 @@ export default [{
     default: Detail
   },
   meta: {
-    isNav: false
+    isNav: false,
+    needLogin: false
   }
 }, {
   path: '/login',
@@ -118,6 +124,7 @@ export default [{
     default: Register
   },
   meta: {
-    isNav: false
+    isNav: false,
+    needLogin: false
   }
 }]

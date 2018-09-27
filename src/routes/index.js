@@ -9,6 +9,10 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  const isLogin = Boolean(window.localStorage.getItem('loginUser'))
+  if (to.fullPath !== '/login' && to.meta.needLogin === true && isLogin === false) {
+    return next('/login')
+  }
   if (to.fullPath === '/category') {
     return next('/category/yundongxie')
   }

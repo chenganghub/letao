@@ -1,10 +1,17 @@
 <template>
-  <div>login</div>
+  <div>
+    <RedHeader text='登陆'/>
+    login
+  </div>
 </template>
 
 <script>
+import { RedHeader } from '@/components'
 export default {
-  name: 'Login'
+  name: 'Login',
+  components:{
+    RedHeader
+  }
 }
 </script>
 
