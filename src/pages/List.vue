@@ -1,11 +1,16 @@
 <template>
   <div>
     <ul class="top" >
+      <!-- 循环渲染数据 
+       点击时的title和现在的title一样就有active类名 
+        isactive是个预定状态 
+        点击那个就把他的tltle修改到 isactive 
+        点击时也把icon的状态改掉-->
      <li
-     v-for="item in list"
+     v-for="(item,id) in list"
     :key="item.text"
-    :class="{ active : item.text === isactive}"
-    @click="liClick(item.text)"
+    :class="{ active : item.text === isactive}" 
+    @click="liClick(item.text,id)"
     >
     {{item.text}}
     <Icon :icon="item.icon"/>
@@ -49,8 +54,10 @@ export default {
     Icon
   },
   methods :{
-    liClick(val){
+    liClick(val,id){
       this.isactive = val;
+      // console.log(this.list[id].icon)
+      this.list[id].icon=!this.list[id].icon
     }
   }
 }
@@ -73,6 +80,7 @@ export default {
     }
     .active {
       color:red;
+      border-bottom: 1px solid pink;
     }
   }
   .list{
