@@ -51,11 +51,17 @@ export default {
       const { username, password } = payload
       const state = JSON.parse(window.localStorage.getItem('userinfo')) || []
       if (state.length === 0) {
+        Toast({message: '本地没有数据，先去注册一个账号吧'})
         return window.localStorage.setItem('isLogin', false)
       }
       state.map(item => {
         if (item.username === username && item.password === password) {
           window.localStorage.setItem('isLogin', true)
+          const loginUser = {
+            username: item.username,
+            userid: item.id
+          }
+          window.localStorage.setItem('whoIsLogin', JSON.stringify(loginUser))
           Toast({message: '登陆成功，即将跳转'})
           setTimeout(() => {
             this.$router.history.push('/home')
