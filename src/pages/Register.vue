@@ -67,7 +67,7 @@ export default {
           id
         })
         window.localStorage.setItem('userinfo', JSON.stringify(userinfo))
-        Toast({4: '注册成功，即将跳转'})
+        Toast({message: '注册成功，即将跳转'})
         setTimeout(() => {
           this.$router.history.push('/login')
         }, 2000)

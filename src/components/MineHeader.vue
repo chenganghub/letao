@@ -1,7 +1,10 @@
 <template>
   <div class="headerbox">
-    <div class="logo">
-      <img src="../../static/images/mine/userlogo.gif" alt="">
+    <div class="left">
+      <div class="logo">
+        <img src="../../static/images/mine/userlogo.gif" alt="">
+      </div>
+      <span @click="loginOut">注销</span>
     </div>
     <div class="info">
       <p class="usertitle">{{username}}</p>
@@ -25,6 +28,7 @@
 
 <script>
 import { Icon } from '@/components'
+import { Toast } from 'mint-ui'
 export default {
   name: 'MineHeader',
   components: {
@@ -32,9 +36,24 @@ export default {
   },
   data () {
     return {
-      username: '123123',
-      userid: '123123'
+      username: '',
+      userid: ''
     }
+  },
+  methods: {
+    loginOut () {
+      window.localStorage.removeItem('whoIsLogin')
+      window.localStorage.setItem('isLogin', false)
+      Toast({message: '注销成功，即将跳转主页'})
+      setTimeout(() => {
+        this.$router.history.push('/home')
+      }, 1000)
+    }
+  },
+  mounted () {
+    const user = JSON.parse(window.localStorage.getItem('whoIsLogin'))
+    this.username = user.username
+    this.userid = user.userid
   }
 }
 </script>
@@ -46,16 +65,29 @@ export default {
   display: flex;
   padding: 15px;
   background: url('../../static/images/mine/bg_img.jpg') no-repeat center;
-  .logo{
-    height: 85px;
-    width:85px;
-    margin-top: 10px;
-    border-radius: 50%;
-    background-color: white;
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-right: 15px;
-    overflow: hidden;
-    img{
-      height: 100%;
+    padding-top: 10px;
+    .logo{
+      height: 85px;
+      width:85px;
+      border-radius: 50%;
+      background-color: white;
+      overflow: hidden;
+      img{
+        height: 100%;
+      }
+    }
+    span{
+      padding: 3px;
+      border-radius: 3px;
+      background-color: @red;
+      color: white;
+      margin-top: 5px;
+      cursor: pointer;
     }
   }
   .info{
