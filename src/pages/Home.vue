@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations } from 'vuex'
 import {
   HomeSwiper,
   HomeSearch,
@@ -21,7 +21,7 @@ import {
   HomeLastItem,
   CustomerService,
   HomeToTop
-} from "@/components";
+} from '@/components'
 export default {
   name: 'home',
   components: {
@@ -34,15 +34,15 @@ export default {
     HomeToTop
   },
   methods: {
-    ...mapMutations(["changeIsHome"])
+    ...mapMutations(['changeIsHome'])
   },
-  mounted() {
-    this.changeIsHome(true);
+  mounted () {
+    this.changeIsHome(true)
   },
-  beforeDestroy() {
-    this.changeIsHome(false);
+  beforeDestroy () {
+    this.changeIsHome(false)
   }
-};
+}
 </script>
 
 <style scoped lang="less">

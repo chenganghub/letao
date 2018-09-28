@@ -7,7 +7,7 @@
 <script>
 export default {
   name: '列表'
-};
+}
 </script>
 
 <style>

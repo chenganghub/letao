@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import Icon from "./Icon";
+import Icon from './Icon'
 export default {
-  name: "CateSearch",
+  name: 'CateSearch',
   components: {
     Icon
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

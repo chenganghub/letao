@@ -13,16 +13,16 @@
 import Icon from './Icon'
 export default {
   name: 'RedHeader',
-  props: ["text"],
+  props: ['text'],
   components: {
     Icon
   },
   methods: {
-    back() {
+    back () {
       this.$router.history.go(-1)
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

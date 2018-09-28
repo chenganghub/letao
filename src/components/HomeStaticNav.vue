@@ -13,7 +13,7 @@
 <script>
 export default {
   name: 'home_static_nav',
-  data (){
+  data () {
     return {
       pics: [
         '../../static/images/home/nav (1).jpg',
@@ -25,14 +25,14 @@ export default {
         '../../static/images/home/nav (7).jpg',
         '../../static/images/home/nav (8).jpg'
       ]
-    };
+    }
   },
   methods: {
-    pushto() {
-      this.$router.history.push("/list");
+    pushto () {
+      this.$router.history.push('/list')
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

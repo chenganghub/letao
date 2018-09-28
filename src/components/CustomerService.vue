@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import Icon from "./Icon";
+import Icon from './Icon'
 export default {
-  name: "HomeService",
+  name: 'HomeService',
   components: {
     Icon
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
