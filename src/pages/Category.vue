@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import { CustomerService, CateSearch, CateBox } from "@/components";
+import { CustomerService, CateSearch, CateBox } from '@/components'
 export default {
-  name: "category",
+  name: 'category',
   components: {
     CustomerService,
     CateSearch,
     CateBox
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

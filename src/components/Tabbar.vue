@@ -15,26 +15,26 @@
 </template>
 
 <script>
-import routesInfo from "@/routes";
+import routesInfo from '@/routes'
 export default {
-  name: "tabbar",
-  data() {
+  name: 'tabbar',
+  data () {
     return {
       routesInfo,
-      selected: "首页"
-    };
+      selected: '首页'
+    }
   },
   computed: {
-    links() {
+    links () {
       const result = this.routesInfo.options.routes.filter(item => {
-        if (item.meta.isNav == true) {
-          return item;
+        if (item.meta.isNav === true) {
+          return item
         }
-      });
-      return result;
+      })
+      return result
     }
   }
-};
+}
 </script>
 
 <style scoped lang='less'>

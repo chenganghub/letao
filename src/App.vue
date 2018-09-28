@@ -17,29 +17,29 @@ export default {
     Tabbar,
     HomeFixHeader
   },
-  data() {
+  data () {
     return {
-      name: "HDM",
+      name: 'HDM',
       isHome: false
-    };
+    }
   },
   methods: {
-    ...mapMutations(["changeReturnTop"])
+    ...mapMutations(['changeReturnTop'])
   },
-  updated() {
-    this.isHome = this.$store.state.isHome;
+  updated () {
+    this.isHome = this.$store.state.isHome
   },
-  mounted() {
-    this.el = this.$refs.mainScroll;
-    this.el.addEventListener("scroll", () => {
+  mounted () {
+    this.el = this.$refs.mainScroll
+    this.el.addEventListener('scroll', () => {
       if (this.el.scrollTop >= 500) {
-        this.changeReturnTop(true);
-      }else{
-        this.changeReturnTop();
+        this.changeReturnTop(true)
+      } else {
+        this.changeReturnTop()
       }
-    },false);
+    }, false)
   }
-};
+}
 </script>
 
 <style lang="less">

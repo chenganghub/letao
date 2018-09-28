@@ -9,17 +9,17 @@
 
 <script>
 export default {
-  name: "HomeSwiper",
-  data() {
+  name: 'HomeSwiper',
+  data () {
     return {
       pics: [
-        "/../static/images/home/banner (1).jpg",
-        "/../static/images/home/banner (2).jpg",
-        "/../static/images/home/banner (3).jpg"
+        '/../static/images/home/banner (1).jpg',
+        '/../static/images/home/banner (2).jpg',
+        '/../static/images/home/banner (3).jpg'
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

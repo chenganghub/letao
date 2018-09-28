@@ -16,7 +16,7 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'CateBox',
-  data (){
+  data () {
     return {
       list: {
         titleImg: null
@@ -48,18 +48,18 @@ export default {
   },
   methods: {
     ...mapActions(['changeCateList']),
-    checkthis(value) {
-      this.ischecked = value;
-      this.$router.history.push(`/category/${value}`);
+    checkthis (value) {
+      this.ischecked = value
+      this.$router.history.push(`/category/${value}`)
     }
   },
-  created() {
-    this.changeCateList();
+  created () {
+    this.changeCateList()
   },
-  updated() {
-    this.changeCateList();
+  updated () {
+    this.changeCateList()
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

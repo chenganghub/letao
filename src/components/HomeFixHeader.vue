@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="home-header">
-      <img src="../images/home/logo.png" alt="">
+      <img src="/../static/images/home/logo.png" alt="">
       <div class="home-header-more">···</div>
     </div>
     <div class='home-header-nav'>
@@ -16,18 +16,18 @@
 
 <script>
 export default {
-  name: "HomeFixHeader",
-  data() {
+  name: 'HomeFixHeader',
+  data () {
     return {
-      list: ["首页", "工厂原创", "运动馆", "女士馆", "男士馆"]
-    };
+      list: ['首页', '工厂原创', '运动馆', '女士馆', '男士馆']
+    }
   },
   methods: {
-    pushto() {
-      this.$router.history.push("/list");
+    pushto () {
+      this.$router.history.push('/list')
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
