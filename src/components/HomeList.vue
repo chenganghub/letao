@@ -41,28 +41,28 @@
 </template>
 
 <script>
-import { getHomeList } from "@/services";
+import { getHomeList } from '@/services'
 export default {
-  name: "HomeList",
-  data() {
+  name: 'HomeList',
+  data () {
     return {
       list: []
-    };
+    }
   },
-  mounted() {
+  mounted () {
     getHomeList().then(resp => {
-      this.list = resp;
-    });
+      this.list = resp
+    })
   },
   methods: {
-    goDetail(id) {
-      this.$router.history.push(`/detail/${id}`);
+    goDetail (id) {
+      this.$router.history.push(`/detail/${id}`)
     },
-    goList() {
-      this.$router.history.push("/list");
+    goList () {
+      this.$router.history.push('/list')
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

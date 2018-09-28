@@ -60,12 +60,17 @@ export default {
         }
       }).length === 0
       if (canResiger) {
+        const id = username + Math.ceil(Math.random() * 100000)
         userinfo.push({
           username,
-          password
+          password,
+          id
         })
         window.localStorage.setItem('userinfo', JSON.stringify(userinfo))
-        Toast({message: '注册成功'})
+        Toast({message: '注册成功，即将跳转'})
+        setTimeout(() => {
+          this.$router.history.push('/login')
+        }, 2000)
       } else {
         Toast({message: '该用户已存在'})
       }

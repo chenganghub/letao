@@ -16,15 +16,15 @@
 </template>
 
 <script>
-import { mapState} from 'vuex';
+import { mapState } from 'vuex'
 export default {
-  name:'CateBoxList',
-  data(){
+  name: 'CateBoxList',
+  data () {
     return {
-      list:{}
+      list: {}
     }
   },
-  computed:{
+  computed: {
     ...mapState(['cateBoxList'])
   }
 }

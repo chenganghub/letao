@@ -8,7 +8,7 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  const isLogin = Boolean(window.localStorage.getItem('isLogin'))
+  const isLogin = Boolean(JSON.parse(window.localStorage.getItem('isLogin')))
   if (to.fullPath !== '/login' && to.meta.needLogin === true && isLogin === false) {
     return next('/login')
   }

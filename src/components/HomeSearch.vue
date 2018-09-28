@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import Icon from "./Icon";
+import Icon from './Icon'
 export default {
-  name: "HomeSearch",
+  name: 'HomeSearch',
   components: {
     Icon
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

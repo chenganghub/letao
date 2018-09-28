@@ -4,9 +4,9 @@
 
 <script>
 export default {
-  name: "icon",
-  props: ["icon"]
-};
+  name: 'icon',
+  props: ['icon']
+}
 </script>
 
 <style>
