@@ -8,6 +8,7 @@ const Login = () => import('@/pages/Login.vue')
 const Register = () => import('@/pages/Register.vue')
 const CateBoxList = () => import('../components/CateBoxList.vue')
 const Tabbar = () => import('../components/Tabbar.vue')
+const CateSearch = () => import('../components/CateSearch.vue')
 
 export default [{
   path: '/',
@@ -92,7 +93,9 @@ export default [{
   path: '/list',
   name: 'list',
   components: {
-    default: List
+    default: List,
+    Tabbar,
+    CateSearch
   },
   meta: {
     isNav: false,

@@ -1,5 +1,6 @@
 <template>
   <div class='main'>
+     <router-view name='CateSearch'></router-view>
     <HomeFixHeader v-if="isHome" />
     <div class='main-info' ref="mainScroll">
       <router-view></router-view>
@@ -82,6 +83,9 @@ html {
 }
 input {
   border: none;
+}
+ul{
+  list-style: none;
 }
 .main {
   display: flex;

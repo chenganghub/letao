@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import "./css/icon.css";
 export default {
   name: "icon",
   props: ["icon"]
@@ -11,5 +10,5 @@ export default {
 </script>
 
 <style>
-@import "./css/icon.css";
+@import "https://at.alicdn.com/t/font_851773_5flttczp63e.css";
 </style>
