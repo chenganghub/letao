@@ -6,13 +6,13 @@
     >
     <div class="homelist-title">
       <img
-      :src="item.itemTitle"
+      v-lazy="item.itemTitle"
       @click="goList"
       alt="">
     </div>
     <div class="homelist-nav">
       <img
-      :src="item.itemNav"
+      v-lazy="item.itemNav"
       @click="goList"
       alt="">
     </div>
@@ -20,7 +20,7 @@
       <img
       v-for="tagitem in item.itemTag"
       :key="tagitem.id"
-      :src="tagitem.url"
+      v-lazy="tagitem.url"
       @click="goList"
       alt="">
     </div>
@@ -41,7 +41,12 @@
 </template>
 
 <script>
+import { Lazyload } from 'mint-ui'
+import Vue from 'vue'
 import { getHomeList } from '@/services'
+
+Vue.use(Lazyload)
+
 export default {
   name: 'HomeList',
   data () {
