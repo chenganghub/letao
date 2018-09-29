@@ -51,6 +51,9 @@ export default {
     checkthis (value) {
       this.ischecked = value
       this.$router.history.push(`/category/${value}`)
+    },
+    setImg () {
+      console.log(this.$route.name)
     }
   },
   created () {
@@ -58,6 +61,10 @@ export default {
   },
   updated () {
     this.changeCateList()
+    this.setImg()
+  },
+  mounted () {
+    this.setImg()
   }
 }
 </script>

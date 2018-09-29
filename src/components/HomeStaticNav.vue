@@ -29,7 +29,9 @@ export default {
   },
   methods: {
     pushto () {
-      this.$router.history.push('/list')
+      const type = Math.ceil(Math.random() * 10)
+      const brand = Math.ceil(Math.random() * 10)
+      this.$router.history.push(`/list?type=${type}&brand=${brand}`)
     }
   }
 }

@@ -7,13 +7,12 @@
     <div class="homelist-title">
       <img
       v-lazy="item.itemTitle"
-      @click="goList"
       alt="">
     </div>
     <div class="homelist-nav">
       <img
-      v-lazy="item.itemNav"
-      @click="goList"
+      v-lazy="item.itemNav.url"
+      @click="goList(item.itemNav.type,item.itemNav.brand)"
       alt="">
     </div>
     <div class="homelist-tags">
@@ -21,7 +20,7 @@
       v-for="tagitem in item.itemTag"
       :key="tagitem.id"
       v-lazy="tagitem.url"
-      @click="goList"
+      @click="goList(tagitem.type,tagitem.brand)"
       alt="">
     </div>
     <div class="homelist-items">
@@ -33,7 +32,7 @@
       alt="">
       <img
       :src="item.itemMore"
-      @click="goList"
+      @click="goList(item.type,item.brand)"
       alt="">
     </div>
     </li>
@@ -63,8 +62,8 @@ export default {
     goDetail (id) {
       this.$router.history.push(`/detail/${id}`)
     },
-    goList () {
-      this.$router.history.push('/list')
+    goList (type, brand) {
+      this.$router.history.push(`/list/?type=${type}&brand=${brand}`)
     }
   }
 }
