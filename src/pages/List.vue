@@ -18,7 +18,7 @@
         <p>￥366.252 <s>12121.22</s></p>
         <p>销量&nbsp;&nbsp;0<Icon class="cart-icon" icon='liwu' /></p>
         <p>2.6折</p>
-      </li> 
+      </li>
     </ul>
   </div>
 </template>
@@ -42,15 +42,15 @@ export default {
         text: '折扣',
         icon: false
       }],
-      isactive:null
+      isactive: null
     }
   },
   components: {
     Icon
   },
-  methods :{
-    liClick(val){
-      this.isactive = val;
+  methods: {
+    liClick (val) {
+      this.isactive = val
     }
   }
 }
@@ -85,7 +85,7 @@ export default {
     box-sizing: border-box;
     li{
       width:48%;
-      
+
       img{
         width:100%;
         margin-top: 20px;
