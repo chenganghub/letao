@@ -8,7 +8,7 @@
       @click="checkthis(item.type)"
       >{{item.text}}</li>
     </ul>
-    <router-view></router-view>
+    <router-view :type="ischecked"></router-view>
   </div>
 </template>'
 <script>
@@ -51,9 +51,6 @@ export default {
     checkthis (value) {
       this.ischecked = value
       this.$router.history.push(`/category/${value}`)
-    },
-    setImg () {
-      console.log(this.$route.name)
     }
   },
   created () {
@@ -61,10 +58,6 @@ export default {
   },
   updated () {
     this.changeCateList()
-    this.setImg()
-  },
-  mounted () {
-    this.setImg()
   }
 }
 </script>

@@ -11,10 +11,10 @@
         <div class="line"></div>
       </div>
       <div class="inputitem">
-        <input type="password" placeholder="确认密码">
+        <input type="password" v-model="checkpwd" placeholder="确认密码">
         <div class="line"></div>
       </div>
-      <button class="registerButton" @click='userRegister(userinfo)'>注册</button>
+      <button class="registerButton" @click='userRegister'>注册</button>
     </div>
     <p class="last">
       <span
@@ -32,33 +32,29 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      checkpwd: ''
     }
   },
   components: {
     RedHeader
   },
-  computed: {
-    userinfo () {
-      const info = {
-        username: this.username,
-        password: this.password
-      }
-      return info
-    }
-  },
   methods: {
-    userRegister (payload) {
-      const { username, password } = payload
+    userRegister () {
+      const username = this.username
+      const password = this.password
       if (username === '' && password === '') {
         return Toast({message: '请填写完整信息'})
       }
       const userinfo = JSON.parse(window.localStorage.getItem('userinfo')) || []
-      const canResiger = userinfo.filter(item => {
+      let canResiger = userinfo.filter(item => {
         if (username === item.username) {
           return item
         }
       }).length === 0
+      if (password !== this.checkpwd) {
+        return Toast({message: '两次密码不一致'})
+      }
       if (canResiger) {
         const id = username + Math.ceil(Math.random() * 100000)
         userinfo.push({
@@ -122,12 +118,14 @@ export default {
     color: white;
     letter-spacing: 5px;
   }
+}
 
-  .last{
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
+.last{
+  width: 95%;
+  margin: 0 auto;
+  span{
+    float: right;
+    margin-right: 15px;
   }
 }
 </style>

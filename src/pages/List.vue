@@ -96,14 +96,14 @@ export default {
   },
   methods: {
     liClick (val, id) {
-      this.isactive = val;
+      this.isactive = val
       // console.log(this.list[id].icon)
-      //点击时更改图标样式
+      // 点击时更改图标样式
       this.list[id].icon = !this.list[id].icon
-      //点击时修改排序类型参数
+      // 点击时修改排序类型参数
       this.sortlist.sort = id
       // console.log(this.sort)
-      //点击时修改排序方式参数
+      // 点击时修改排序方式参数
        this.sortlist.sorttype = this.list[id].icon==true?1:2
        console.log(this.sortlist)
        getList(this.sortlist)

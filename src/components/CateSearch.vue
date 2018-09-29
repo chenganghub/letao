@@ -1,6 +1,11 @@
 <template>
   <div class="cate-search">
-    <Icon icon="flow" class="flow"/>
+    <span @click="back">
+      <Icon
+      icon="flow"
+      class="flow"
+      />
+    </span>
     <div class="inputbox">
       <input type="text" placeholder="搜索商品">
       <Icon icon="sousuo" />
@@ -15,6 +20,11 @@ export default {
   name: 'CateSearch',
   components: {
     Icon
+  },
+  methods: {
+    back () {
+      this.$router.history.go(-1)
+    }
   }
 }
 </script>

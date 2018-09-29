@@ -1,7 +1,7 @@
 <template>
   <div class="right-content">
     <div class="title-img">
-      <img :src="cateBoxList.titleImg" alt="">
+      <img :src="`../../static/images/category/${type}.jpg`" alt="">
     </div>
     <p>热门品牌</p>
     <div class="list-box">
@@ -25,6 +25,7 @@ export default {
       list: {}
     }
   },
+  props: ['type'],
   computed: {
     ...mapState(['cateBoxList'])
   },
