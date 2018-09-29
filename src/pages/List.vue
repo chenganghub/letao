@@ -175,48 +175,12 @@ export default {
       font-size: 16px;
       margin-top: 15px;
     }
-<<<<<<< HEAD
     p:nth-child(3) {
       font-size: 15px;
       color: red;
       margin-top: 15px;
       margin-bottom: 15px;
       > s {
-=======
-  }
-  .list{
-    display: flex;
-    width: 92%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    overflow: hidden;
-    justify-content: space-between;
-    box-sizing: border-box;
-    li{
-      width:48%;
-
-      img{
-        width:100%;
-        margin-top: 20px;
-      }
-      p:nth-child(2){
-        font-size: 16px;
-        margin-top: 15px;
-      }
-       p:nth-child(3){
-        font-size: 15px;
-        color:red;
-        margin-top: 15px;
-        margin-bottom: 15px;
-        >s{
-          font-size: 12px;
-          margin-left: 10px;
-          color:#999;
-
-        }
-      }
-       p:nth-child(4){
->>>>>>> 分类页面头图跟随标签切换
         font-size: 12px;
         margin-left: 10px;
         color: #999;
@@ -242,9 +206,5 @@ export default {
       color: white;
     }
   }
-<<<<<<< HEAD
 }
 </style>
-=======
-</style>
->>>>>>> 分类页面头图跟随标签切换
