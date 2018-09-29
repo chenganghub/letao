@@ -30,3 +30,16 @@ export const getHomeList = () => {
 export const getCateList = () => {
   return ajax.get('/86102/api/v1/category/list')
 }
+
+export const getList = () => {
+  return ajax.get('/86466/api/list')
+}
+export const getsortList = (payload) => {
+  const {
+    type,
+    brand,
+    sort,
+    sorttype
+   } = payload
+  return ajax.get(`/86466/api/list?type=${type}&brand=${brand}&sort=${sort}&sorttype=${sorttype}`)
+}
