@@ -37,7 +37,8 @@ export default {
   data () {
     return {
       username: '',
-      userid: ''
+      userid: '',
+      icon: true
     }
   },
   methods: {
