@@ -6,22 +6,21 @@
     >
     <div class="homelist-title">
       <img
-      :src="item.itemTitle"
-      @click="goList"
+      v-lazy="item.itemTitle"
       alt="">
     </div>
     <div class="homelist-nav">
       <img
-      :src="item.itemNav"
-      @click="goList"
+      v-lazy="item.itemNav.url"
+      @click="goList(item.itemNav.type,item.itemNav.brand)"
       alt="">
     </div>
     <div class="homelist-tags">
       <img
       v-for="tagitem in item.itemTag"
       :key="tagitem.id"
-      :src="tagitem.url"
-      @click="goList"
+      v-lazy="tagitem.url"
+      @click="goList(tagitem.type,tagitem.brand)"
       alt="">
     </div>
     <div class="homelist-items">
@@ -33,7 +32,7 @@
       alt="">
       <img
       :src="item.itemMore"
-      @click="goList"
+      @click="goList(item.type,item.brand)"
       alt="">
     </div>
     </li>
@@ -41,7 +40,12 @@
 </template>
 
 <script>
+import { Lazyload } from 'mint-ui'
+import Vue from 'vue'
 import { getHomeList } from '@/services'
+
+Vue.use(Lazyload)
+
 export default {
   name: 'HomeList',
   data () {
@@ -58,8 +62,8 @@ export default {
     goDetail (id) {
       this.$router.history.push(`/detail/${id}`)
     },
-    goList () {
-      this.$router.history.push('/list')
+    goList (type, brand) {
+      this.$router.history.push(`/list/?type=${type}&brand=${brand}`)
     }
   }
 }

@@ -8,6 +8,7 @@
       <div
       v-for="item in cateBoxList.items"
       :key="item.id"
+      @click="toList(item.type,item.brand)"
       class="list-item">
         <img :src="item.url" alt="">
       </div>
@@ -26,6 +27,11 @@ export default {
   },
   computed: {
     ...mapState(['cateBoxList'])
+  },
+  methods: {
+    toList (type, brand) {
+      this.$router.history.push(`/list/?type=${type}&brand=${brand}`)
+    }
   }
 }
 </script>
