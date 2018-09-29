@@ -102,7 +102,7 @@ export default [{
     needLogin: false
   }
 }, {
-  path: '/detail',
+  path: '/detail/:id',
   name: 'detail',
   components: {
     default: Detail
