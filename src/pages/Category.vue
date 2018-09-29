@@ -1,7 +1,9 @@
 <template>
   <div class="outer-box">
     <CateSearch />
-    <CateBox />
+    <keep-alive>
+      <CateBox />
+    </keep-alive>
     <CustomerService />
   </div>
 </template>

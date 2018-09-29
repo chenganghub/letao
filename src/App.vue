@@ -84,6 +84,10 @@ html {
 input {
   border: none;
 }
+img,video,audio {
+  max-width: 100%;
+  max-height: 100%;
+}
 ul{
   list-style: none;
 }
