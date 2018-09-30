@@ -3,7 +3,7 @@
     <div class="title-img">
       <img :src="`../../static/images/category/${type}.jpg`" alt="">
     </div>
-    <p>{{routeName}}</p>
+    <p>热门品牌</p>
     <div class="list-box">
       <div
       v-for="item in BoxList.items"
