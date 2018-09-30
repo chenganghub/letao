@@ -6,7 +6,7 @@
     <p>热门品牌</p>
     <div class="list-box">
       <div
-      v-for="item in cateBoxList.items"
+      v-for="item in BoxList.items"
       :key="item.id"
       @click="toList(item.type,item.brand)"
       class="list-item">
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'CateBoxList',
   data () {
@@ -25,11 +25,21 @@ export default {
       list: {}
     }
   },
-  props: ['type'],
+  props: ['type', 'routeName'],
   computed: {
-    ...mapState(['cateBoxList'])
+    ...mapState(['cateBoxList']),
+    BoxList () {
+      const list = JSON.parse(window.localStorage.getItem(this.routeName)) || {}
+      if (list.titleImg === undefined) {
+        this.changeCateList()
+        window.localStorage.setItem(this.routeName, JSON.stringify(this.cateBoxList))
+        return this.cateBoxList
+      }
+      return list
+    }
   },
   methods: {
+    ...mapActions(['changeCateList']),
     toList (type, brand) {
       this.$router.history.push(`/list/?type=${type}&brand=${brand}`)
     }

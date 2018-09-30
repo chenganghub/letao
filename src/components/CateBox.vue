@@ -8,11 +8,14 @@
       @click="checkthis(item.type)"
       >{{item.text}}</li>
     </ul>
-    <router-view :type="ischecked"></router-view>
+    <router-view
+    :type="ischecked"
+    :routeName="routeName"
+    ></router-view>
   </div>
 </template>'
 <script>
-import { mapActions } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'CateBox',
@@ -47,17 +50,16 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['changeCateList']),
     checkthis (value) {
       this.ischecked = value
       this.$router.history.push(`/category/${value}`)
     }
   },
-  created () {
-    this.changeCateList()
-  },
-  updated () {
-    this.changeCateList()
+  computed: {
+    ...mapState(['cateBoxList']),
+    routeName () {
+      return this.$route.name
+    }
   }
 }
 </script>

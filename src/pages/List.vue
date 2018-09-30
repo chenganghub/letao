@@ -1,14 +1,14 @@
 <template>
   <div class="list-page">
     <ul class="top">
-      <!-- 循环渲染数据 
-       点击时的title和现在的title一样就有active类名 
-        isactive是个预定状态 
-        点击那个就把他的tltle修改到 isactive 
+      <!-- 循环渲染数据
+       点击时的title和现在的title一样就有active类名
+        isactive是个预定状态
+        点击那个就把他的tltle修改到 isactive
         点击时也把icon的状态改掉-->
-      <li  
-      v-for="(item,id) in list" 
-      :key="item.text" 
+      <li
+      v-for="(item,id) in list"
+      :key="item.text"
       :class="{ active : item.text === isactive}"
        @click="liClick(item.text,id)"
        >
@@ -19,14 +19,14 @@
 
    <div class="box">
      <!--利用插件的滚动加载  外层盒子必须给高度  再刷新数据时必须是追加数组不能 -->
-      <ul  
+      <ul
        v-infinite-scroll="loadMore"
        infinite-scroll-disabled="loading"
        infinite-scroll-distance="10" class="list"
        id="scroll"
        >
         <li
-         v-for="itmes in goodslist" 
+         v-for="itmes in goodslist"
          :key="itmes.img"
          @click="toDetail(itmes.id)"
          >
@@ -35,10 +35,9 @@
           <p>￥{{itmes.newprice}} <s>{{itmes.price}}</s></p>
           <p>销量&nbsp;&nbsp;{{itmes.salesvolume}}
             <!-- 图标 -->
-            <Icon 
-            class="cart-icon" 
-            icon='cart' 
-            
+            <Icon
+            class="cart-icon"
+            icon='cart'
             />
           </p>
           <p>{{itmes.discount}}折</p>
