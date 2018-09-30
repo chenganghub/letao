@@ -30,7 +30,6 @@ export default {
     ...mapState(['cateBoxList']),
     BoxList () {
       const list = JSON.parse(window.localStorage.getItem(this.routeName)) || {}
-      console.log(list)
       if (list.titleImg === undefined) {
         this.changeCateList()
         window.localStorage.setItem(this.routeName, JSON.stringify(this.cateBoxList))
