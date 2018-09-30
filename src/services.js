@@ -40,6 +40,6 @@ export const getsortList = (payload) => {
     brand,
     sort,
     sorttype
-   } = payload
+  } = payload
   return ajax.get(`/86466/api/list?type=${type}&brand=${brand}&sort=${sort}&sorttype=${sorttype}`)
 }
