@@ -102,7 +102,6 @@ export default {
   },
   methods: {
     cartIconClick () {
-      console.log(1)
       this.isShow = true
     },
     liClick (val, id) {
