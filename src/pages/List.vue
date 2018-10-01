@@ -114,7 +114,6 @@ export default {
       // console.log(this.sort)
       // 点击时修改排序方式参数
       this.sortlist.sorttype = this.list[id].icon === true ? 1 : 2
-      console.log(this.sortlist)
       getList(this.sortlist)
         .then(resp => {
           this.goodslist = resp
