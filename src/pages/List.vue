@@ -101,9 +101,9 @@ export default {
     this.sortlist.brand = brand
   },
   methods: {
-    cartIconClick(){
+    cartIconClick () {
       console.log(1)
-      this.isShow = true 
+      this.isShow = true
     },
     liClick (val, id) {
       this.isactive = val

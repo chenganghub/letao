@@ -1,9 +1,10 @@
 <template>
   <div class="outer-box">
+    <!-- 搜索组件 -->
     <CateSearch />
-    <keep-alive>
-      <CateBox />
-    </keep-alive>
+    <!-- 内容显示组件 -->
+    <CateBox />
+    <!-- 客服 -->
     <CustomerService />
   </div>
 </template>
