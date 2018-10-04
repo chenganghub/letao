@@ -6,6 +6,8 @@ export default {
     state.returnTopShow = bool
   },
   changeCate (state, list) {
+    const dateNow = new Date().getTime()
+    list.getListTime = dateNow
     state.cateBoxList = list
   },
   userLogin (state, payload) {

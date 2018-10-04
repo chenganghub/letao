@@ -26,7 +26,8 @@ export default {
     // 判断本地是否有缓存，没有则请求，该方法不必使用vuex，
     BoxList () {
       const list = JSON.parse(window.localStorage.getItem(this.type)) || {}
-      if (list.titleImg === undefined) {
+      const isDateObsolete = (new Date().getTime() - list.getListTime) >= 604800000
+      if (list.titleImg === undefined || isDateObsolete) {
         this.changeCateList()
         window.localStorage.setItem(this.type, JSON.stringify(this.cateBoxList))
         return this.cateBoxList
