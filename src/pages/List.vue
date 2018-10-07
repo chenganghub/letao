@@ -218,17 +218,18 @@ export default {
   }
 }
 .bounce-enter-active {
-  animation: bounce-in 5s;
+  animation: bounce-in 2s;
 }
 .bounce-leave-active {
-  animation: bounce-in 5s reverse;
+  animation: bounce-in 2s;
 }
 @keyframes bounce-in {
   0% {
     transform: scale(0);
+     transform-origin: bottom;
   }
   50% {
-    transform: scale(5);
+    transform: scale(1);
   }
   100% {
     transform: scale(1);
