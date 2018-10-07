@@ -118,7 +118,7 @@ export default {
     height: 25px;
     border-radius: 50%;
     position: absolute;
-    top: 260px;
+    top: 283px;
     right: 5px;
     border: none;
     text-align: center;

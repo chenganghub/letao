@@ -1,9 +1,5 @@
 <template>
   <div class="list-page">
-    <!-- vue动画 -->
-    <transition name="bounce">
-       <listcart v-show="isShow" class="cartbox"></listcart>
-    </transition>
     <ul class="top">
       <!-- 循环渲染数据
        点击时的title和现在的title一样就有active类名
@@ -39,7 +35,13 @@
           <p>￥{{itmes.newprice}} <s>{{itmes.price}}</s></p>
           <p>销量&nbsp;&nbsp;{{itmes.salesvolume}}
             <!-- 图标  icon渲染出来是个i标签 不能直接加点击事件 -->
+             <!-- vue动画 -->
+    <transition name="bounce">
+       <listcart v-show="isShow" class="cartbox"
+       ></listcart>
+    </transition>
             <span @click.stop="cartIconClick">
+
             <Icon
             class="cart-icon"
             icon='cart'
