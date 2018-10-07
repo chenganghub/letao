@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <!-- 左边选择栏 -->
     <ul class="left-nav">
       <li
       v-for="item in navs"
@@ -8,15 +9,13 @@
       @click="checkthis(item.type)"
       >{{item.text}}</li>
     </ul>
+    <!-- 右边内容显示区域，采用嵌套路由 -->
     <router-view
     :type="ischecked"
-    :routeName="routeName"
     ></router-view>
   </div>
 </template>'
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'CateBox',
   data () {
@@ -53,12 +52,6 @@ export default {
     checkthis (value) {
       this.ischecked = value
       this.$router.history.push(`/category/${value}`)
-    }
-  },
-  computed: {
-    ...mapState(['cateBoxList']),
-    routeName () {
-      return this.$route.name
     }
   }
 }

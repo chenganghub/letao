@@ -101,9 +101,8 @@ export default {
     this.sortlist.brand = brand
   },
   methods: {
-    cartIconClick(){
-      console.log(1)
-      this.isShow = true 
+    cartIconClick () {
+      this.isShow = true
     },
     liClick (val, id) {
       this.isactive = val
@@ -115,7 +114,6 @@ export default {
       // console.log(this.sort)
       // 点击时修改排序方式参数
       this.sortlist.sorttype = this.list[id].icon === true ? 1 : 2
-      console.log(this.sortlist)
       getList(this.sortlist)
         .then(resp => {
           this.goodslist = resp

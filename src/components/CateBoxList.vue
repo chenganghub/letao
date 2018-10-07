@@ -20,19 +20,15 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'CateBoxList',
-  data () {
-    return {
-      list: {}
-    }
-  },
-  props: ['type', 'routeName'],
+  props: ['type'],
   computed: {
     ...mapState(['cateBoxList']),
+    // 判断本地是否有缓存，没有则请求，该方法不必使用vuex，
     BoxList () {
-      const list = JSON.parse(window.localStorage.getItem(this.routeName)) || {}
+      const list = JSON.parse(window.localStorage.getItem(this.type)) || {}
       if (list.titleImg === undefined) {
         this.changeCateList()
-        window.localStorage.setItem(this.routeName, JSON.stringify(this.cateBoxList))
+        window.localStorage.setItem(this.type, JSON.stringify(this.cateBoxList))
         return this.cateBoxList
       }
       return list

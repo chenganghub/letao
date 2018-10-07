@@ -49,11 +49,13 @@ export default {
     },
     userlogin (payload) {
       const { username, password } = payload
+      // 获取本地缓存信息
       const state = JSON.parse(window.localStorage.getItem('userinfo')) || []
       if (state.length === 0) {
         Toast({message: '本地没有数据，先去注册一个账号吧'})
         return window.localStorage.setItem('isLogin', false)
       }
+      // 有账号信息则进行判断
       state.map(item => {
         if (item.username === username && item.password === password) {
           window.localStorage.setItem('isLogin', true)
@@ -61,6 +63,7 @@ export default {
             username: item.username,
             userid: item.id
           }
+          // 登陆成功则进行用户基本信息保存,实际服务器会返回一个token，保存的是token
           window.localStorage.setItem('whoIsLogin', JSON.stringify(loginUser))
           Toast({message: '登陆成功，即将跳转'})
           setTimeout(() => {

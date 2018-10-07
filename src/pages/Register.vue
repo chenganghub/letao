@@ -43,19 +43,24 @@ export default {
     userRegister () {
       const username = this.username
       const password = this.password
-      if (username === '' && password === '') {
+      const checkpwd = this.checkpwd
+      // 判断输入信息是否完整
+      if (username === '' && password === '' && checkpwd === '') {
         return Toast({message: '请填写完整信息'})
       }
+      // 读取本地缓存
       const userinfo = JSON.parse(window.localStorage.getItem('userinfo')) || []
+      // 过滤出与输入用户名相同的用户信息，判断是否存在
       let canResiger = userinfo.filter(item => {
         if (username === item.username) {
           return item
         }
       }).length === 0
-      if (password !== this.checkpwd) {
+      if (password !== checkpwd) {
         return Toast({message: '两次密码不一致'})
       }
       if (canResiger) {
+        // 可以注册则保存用户信息
         const id = username + Math.ceil(Math.random() * 100000)
         userinfo.push({
           username,
@@ -64,6 +69,7 @@ export default {
         })
         window.localStorage.setItem('userinfo', JSON.stringify(userinfo))
         Toast({message: '注册成功，即将跳转'})
+        // 延迟跳转到登陆页面
         setTimeout(() => {
           this.$router.history.push('/login')
         }, 2000)
